@@ -29,3 +29,23 @@ STDMETHODIMP CMyMath::Add(LONG x, LONG y, long* z)
 	return S_OK;
 }
 
+STDMETHODIMP CMyMath::Sub(LONG x, LONG y, LONG* z)
+{
+	*z = x - y;
+
+	return S_OK;
+} 
+
+STDMETHODIMP CMyMath::Mul(LONG x, LONG y, LONG* z)
+{
+	*z = x * y;
+
+	return S_OK;
+}
+
+STDMETHODIMP CMyMath::Div(LONG x, LONG y, LONG* z)
+{
+	*z = x / y;
+
+	return S_OK;
+}

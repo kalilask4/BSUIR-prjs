@@ -93,6 +93,21 @@ EXTERN_C const IID IID_IMyMath;
             /* [in] */ LONG y,
             /* [out] */ long *z) = 0;
         
+        virtual /* [helpstring][id] */ HRESULT STDMETHODCALLTYPE Sub( 
+            /* [in] */ LONG x,
+            /* [in] */ LONG y,
+            /* [retval][out] */ LONG *z) = 0;
+        
+        virtual /* [helpstring][id] */ HRESULT STDMETHODCALLTYPE Mul( 
+            /* [in] */ LONG x,
+            /* [in] */ LONG y,
+            /* [retval][out] */ LONG *z) = 0;
+        
+        virtual /* [helpstring][id] */ HRESULT STDMETHODCALLTYPE Div( 
+            /* [in] */ LONG x,
+            /* [in] */ LONG y,
+            /* [retval][out] */ LONG *z) = 0;
+        
     };
     
     
@@ -157,6 +172,24 @@ EXTERN_C const IID IID_IMyMath;
             /* [in] */ LONG y,
             /* [out] */ long *z);
         
+        /* [helpstring][id] */ HRESULT ( STDMETHODCALLTYPE *Sub )( 
+            IMyMath * This,
+            /* [in] */ LONG x,
+            /* [in] */ LONG y,
+            /* [retval][out] */ LONG *z);
+        
+        /* [helpstring][id] */ HRESULT ( STDMETHODCALLTYPE *Mul )( 
+            IMyMath * This,
+            /* [in] */ LONG x,
+            /* [in] */ LONG y,
+            /* [retval][out] */ LONG *z);
+        
+        /* [helpstring][id] */ HRESULT ( STDMETHODCALLTYPE *Div )( 
+            IMyMath * This,
+            /* [in] */ LONG x,
+            /* [in] */ LONG y,
+            /* [retval][out] */ LONG *z);
+        
         END_INTERFACE
     } IMyMathVtbl;
 
@@ -195,6 +228,15 @@ EXTERN_C const IID IID_IMyMath;
 
 #define IMyMath_Add(This,x,y,z)	\
     ( (This)->lpVtbl -> Add(This,x,y,z) ) 
+
+#define IMyMath_Sub(This,x,y,z)	\
+    ( (This)->lpVtbl -> Sub(This,x,y,z) ) 
+
+#define IMyMath_Mul(This,x,y,z)	\
+    ( (This)->lpVtbl -> Mul(This,x,y,z) ) 
+
+#define IMyMath_Div(This,x,y,z)	\
+    ( (This)->lpVtbl -> Div(This,x,y,z) ) 
 
 #endif /* COBJMACROS */
 
