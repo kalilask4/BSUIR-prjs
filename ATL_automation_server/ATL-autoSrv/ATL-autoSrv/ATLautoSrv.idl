@@ -16,6 +16,7 @@ import "ocidl.idl";
 ]
 interface IMyMath : IDispatch
 {
+	[id(1), helpstring("addition")] HRESULT Add([in] LONG x, [in] LONG y, [out] long* z);
 };
 [
 	uuid(6d2ec9b2-2f7a-4358-8fb4-d333b8edd6fa),

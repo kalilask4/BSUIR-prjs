@@ -57,6 +57,7 @@ public:
 
 
 
+	STDMETHOD(Add)(LONG x, LONG y, long* z);
 };
 
 OBJECT_ENTRY_AUTO(__uuidof(CoMyMath), CMyMath)

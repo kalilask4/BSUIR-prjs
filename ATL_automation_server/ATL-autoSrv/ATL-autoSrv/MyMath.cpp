@@ -20,3 +20,12 @@ STDMETHODIMP CMyMath::InterfaceSupportsErrorInfo(REFIID riid)
 	}
 	return S_FALSE;
 }
+
+
+STDMETHODIMP CMyMath::Add(LONG x, LONG y, long* z)
+{
+	*z = x + y;
+
+	return S_OK;
+}
+

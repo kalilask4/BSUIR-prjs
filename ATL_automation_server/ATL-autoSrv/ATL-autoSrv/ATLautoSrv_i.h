@@ -88,6 +88,11 @@ EXTERN_C const IID IID_IMyMath;
     IMyMath : public IDispatch
     {
     public:
+        virtual /* [helpstring][id] */ HRESULT STDMETHODCALLTYPE Add( 
+            /* [in] */ LONG x,
+            /* [in] */ LONG y,
+            /* [out] */ long *z) = 0;
+        
     };
     
     
@@ -146,6 +151,12 @@ EXTERN_C const IID IID_IMyMath;
             /* [annotation][out] */ 
             _Out_opt_  UINT *puArgErr);
         
+        /* [helpstring][id] */ HRESULT ( STDMETHODCALLTYPE *Add )( 
+            IMyMath * This,
+            /* [in] */ LONG x,
+            /* [in] */ LONG y,
+            /* [out] */ long *z);
+        
         END_INTERFACE
     } IMyMathVtbl;
 
@@ -181,6 +192,9 @@ EXTERN_C const IID IID_IMyMath;
 #define IMyMath_Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr)	\
     ( (This)->lpVtbl -> Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr) ) 
 
+
+#define IMyMath_Add(This,x,y,z)	\
+    ( (This)->lpVtbl -> Add(This,x,y,z) ) 
 
 #endif /* COBJMACROS */
 
