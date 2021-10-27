@@ -57,10 +57,10 @@ public:
 
 
 
-	STDMETHOD(Add)(LONG x, LONG y, long* z);
-	STDMETHOD(Sub)(LONG x, LONG y, long* z);
-	STDMETHOD(Mul)(LONG x, LONG y, long* z);
-	STDMETHOD(Div)(LONG x, LONG y, long* z);
+	STDMETHOD(Add)(LONG x, LONG y, LONG* z);
+	STDMETHOD(Sub)(LONG x, LONG y, LONG* z);
+	STDMETHOD(Mul)(LONG x, LONG y, LONG* z);
+	STDMETHOD(Div)(LONG x, LONG y, LONG* z);
 
 };
 

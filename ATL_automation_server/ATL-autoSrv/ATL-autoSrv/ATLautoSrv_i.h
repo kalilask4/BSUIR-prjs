@@ -91,7 +91,7 @@ EXTERN_C const IID IID_IMyMath;
         virtual /* [helpstring][id] */ HRESULT STDMETHODCALLTYPE Add( 
             /* [in] */ LONG x,
             /* [in] */ LONG y,
-            /* [out] */ long *z) = 0;
+            /* [retval][out] */ LONG *z) = 0;
         
         virtual /* [helpstring][id] */ HRESULT STDMETHODCALLTYPE Sub( 
             /* [in] */ LONG x,
@@ -170,7 +170,7 @@ EXTERN_C const IID IID_IMyMath;
             IMyMath * This,
             /* [in] */ LONG x,
             /* [in] */ LONG y,
-            /* [out] */ long *z);
+            /* [retval][out] */ LONG *z);
         
         /* [helpstring][id] */ HRESULT ( STDMETHODCALLTYPE *Sub )( 
             IMyMath * This,

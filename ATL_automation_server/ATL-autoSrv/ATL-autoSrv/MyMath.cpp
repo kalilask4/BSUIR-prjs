@@ -22,7 +22,7 @@ STDMETHODIMP CMyMath::InterfaceSupportsErrorInfo(REFIID riid)
 }
 
 
-STDMETHODIMP CMyMath::Add(LONG x, LONG y, long* z)
+STDMETHODIMP CMyMath::Add(LONG x, LONG y, LONG* z)
 {
 	*z = x + y;
 
