@@ -1,0 +1,18 @@
+﻿// ATL-autoSrv.idl: источник языка IDL для ATL-autoSrv
+//
+
+// Этот файл будет обработан средством MIDL для
+// создание библиотеки типов ($handlersafeidlname$.tlb) и кода маршалирования.
+
+import "oaidl.idl";
+import "ocidl.idl";
+
+[
+	uuid(6d2ec9b2-2f7a-4358-8fb4-d333b8edd6fa),
+	version(1.0),
+]
+library ATLautoSrvLib
+{
+	importlib("stdole2.tlb");
+};
+
