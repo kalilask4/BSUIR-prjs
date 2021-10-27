@@ -8,11 +8,29 @@ import "oaidl.idl";
 import "ocidl.idl";
 
 [
+	object,
+	uuid(fb96f5a4-2a4c-4f26-9f0b-14fa7f7c057b),
+	dual,
+	nonextensible,
+	pointer_default(unique)
+]
+interface IMyMath : IDispatch
+{
+};
+[
 	uuid(6d2ec9b2-2f7a-4358-8fb4-d333b8edd6fa),
 	version(1.0),
 ]
 library ATLautoSrvLib
 {
 	importlib("stdole2.tlb");
+	[
+		uuid(4e488da0-e934-4289-9a8a-0d9182fed9c7)
+	]
+	coclass CoMyMath
+	{
+		[default] interface IMyMath;
+	};
 };
 
+import "shobjidl.idl";
