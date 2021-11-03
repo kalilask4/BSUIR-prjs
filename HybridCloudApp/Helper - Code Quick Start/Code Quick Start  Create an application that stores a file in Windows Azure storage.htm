@@ -1,0 +1,640 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0066)http://msdn.microsoft.com/en-us/library/windowsazure/gg651129.aspx -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head xmlns="http://www.w3.org/1999/xhtml"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>
+	
+  Code Quick Start: Create an application that stores a file in Windows Azure storage
+
+</title><meta name="DCS.dcsuri" content="/en-us/library/windowsazure/gg651129(d=lightweight,l=en-us,v=MSDN.10).aspx"><meta name="NormalizedUrl" content="http://msdn.microsoft.com/en-us/library/windowsazure/gg651129(d=lightweight,l=en-us,v=MSDN.10).aspx"><meta name="VotingContextUrl" content="http://msdn.microsoft.com/en-us/library/windowsazure/gg651129(l=en-us,v=MSDN.10).aspx"><meta name="MN" content="73E99E88-1:22:10 AM"><meta name="Search.ShortId" content="gg651129"><meta name="Ms.Locale" content="en-us"><link rel="canonical" href="./Code Quick Start  Create an application that stores a file in Windows Azure storage_files/Code Quick Start  Create an application that stores a file in Windows Azure storage.htm" xmlns="http://www.w3.org/1999/xhtml"><link href="./Code Quick Start  Create an application that stores a file in Windows Azure storage_files/LibraryView.css" rel="stylesheet" type="text/css" xmlns="http://www.w3.org/1999/xhtml"><link href="./Code Quick Start  Create an application that stores a file in Windows Azure storage_files/Msdn_ImageSprite.css" rel="stylesheet" type="text/css" xmlns="http://www.w3.org/1999/xhtml"><link rel="stylesheet" type="text/css" href="./Code Quick Start  Create an application that stores a file in Windows Azure storage_files/WindowsAzure_ImageSprite.css" xmlns="http://www.w3.org/1999/xhtml"><link rel="stylesheet" type="text/css" href="./Code Quick Start  Create an application that stores a file in Windows Azure storage_files/header.css" xmlns="http://www.w3.org/1999/xhtml"><link rel="stylesheet" type="text/css" href="./Code Quick Start  Create an application that stores a file in Windows Azure storage_files/SearchBox.css" xmlns="http://www.w3.org/1999/xhtml"><link rel="stylesheet" type="text/css" href="./Code Quick Start  Create an application that stores a file in Windows Azure storage_files/TocResize.css" xmlns="http://www.w3.org/1999/xhtml"><link rel="stylesheet" type="text/css" href="./Code Quick Start  Create an application that stores a file in Windows Azure storage_files/page.css" xmlns="http://www.w3.org/1999/xhtml"><link rel="stylesheet" type="text/css" href="./Code Quick Start  Create an application that stores a file in Windows Azure storage_files/TopicNotInScope.css" xmlns="http://www.w3.org/1999/xhtml"><link href="./Code Quick Start  Create an application that stores a file in Windows Azure storage_files/CodeSnippet.css" rel="stylesheet" type="text/css" xmlns="http://www.w3.org/1999/xhtml"><link href="./Code Quick Start  Create an application that stores a file in Windows Azure storage_files/CodeSnippet.css" rel="stylesheet" type="text/css" xmlns="http://www.w3.org/1999/xhtml"><link href="./Code Quick Start  Create an application that stores a file in Windows Azure storage_files/CodeSnippet.css" rel="stylesheet" type="text/css" xmlns="http://www.w3.org/1999/xhtml"><link href="./Code Quick Start  Create an application that stores a file in Windows Azure storage_files/CodeSnippet.css" rel="stylesheet" type="text/css" xmlns="http://www.w3.org/1999/xhtml"><link href="./Code Quick Start  Create an application that stores a file in Windows Azure storage_files/CodeSnippet.css" rel="stylesheet" type="text/css" xmlns="http://www.w3.org/1999/xhtml"><link href="./Code Quick Start  Create an application that stores a file in Windows Azure storage_files/Footer.css" rel="stylesheet" type="text/css" xmlns="http://www.w3.org/1999/xhtml"><link rel="alternate" media="print" href="http://msdn.microsoft.com/en-us/library/windowsazure/gg651129(d=printer).aspx" xmlns="http://www.w3.org/1999/xhtml"><link rel="stylesheet" type="text/css" href="./Code Quick Start  Create an application that stores a file in Windows Azure storage_files/printview.css" media="print" title="printonly" xmlns="http://www.w3.org/1999/xhtml"><script>window["_GOOG_TRANS_EXT_VER"] = "1";</script></head>
+<body>
+  
+
+<div class="header">
+  <div class="rightPanel"> 
+    <a href="http://windows.azure.com/" title="Sign in to the Management Portal" class="headerLink">Sign in to the Management Portal</a><span class="linkSep">|</span><a href="http://www.microsoft.com/windowsazure/support/" title="Support" class="headerLink">Support</a><span class="linkSep">|</span><a href="http://msdn.microsoft.com/en-us/library/gg467325.aspx" title="Library" class="relatedLibraryLinkImage headerLink">&nbsp;</a><span class="linkSep">|</span><a id="PrintLink" href="javascript:PrintDropdown_Show();" title="Print" class="printLinkImage">&nbsp;</a>
+    <div id="PrintDropdown" class="printDropdown">
+        <a href="javascript:window.print();" title="Print This Topic">Print This Topic</a>
+    </div>
+  </div>
+  
+<div class="SearchBox">
+  <form id="HeaderSearchForm" method="get" action="http://social.msdn.microsoft.com/Search/en-us/">
+    <input type="hidden" name="Refinement" value="138">
+    <input id="HeaderSearchButton" value="" class="SearchButton" type="submit" title="Search" onclick="javascript:if(document.getElementById(&#39;HeaderSearchTextBox&#39;).value == &#39;Search Windows Azure Library&#39;)document.getElementById(&#39;HeaderSearchTextBox&#39;).value=&#39;&#39;; document.getElementById(&#39;HeaderSearchForm&#39;).submit();">
+    <input name="query" id="HeaderSearchTextBox" class="TextBoxSearchLoaded" type="text" value="Search Windows Azure Library" maxlength="100" onfocus="WatermarkFocus(this, &#39;Search Windows Azure Library&#39;, &#39;TextBoxSearch&#39;)" onblur="WatermarkBlur(this, &#39;Search Windows Azure Library&#39;, &#39;TextBoxSearchLoaded&#39;)" title="Search Windows Azure Library">
+  </form>
+</div>
+  <a class="siteLogo" href="http://www.microsoft.com/windowsazure/" title="Windows Azure">Windows Azure</a>
+  <div class="tabs">
+    <ul class="tabsMenu">
+      
+                <li><a href="http://www.microsoft.com/windowsazure/" title="Home" class="linkFirstTab">HOME</a></li>
+            
+                <li><a href="http://www.microsoft.com/windowsazure/features/" title="Features" class="linkTab">FEATURES</a></li>
+            
+                <li><a href="http://www.microsoft.com/windowsazure/decide/" title="Decide" class="linkTab">DECIDE</a></li>
+            
+            <li><a href="http://www.microsoft.com/windowsazure/learn/" title="Learn" class="selectedTab">LEARN</a></li>
+          
+                <li><a href="http://www.microsoft.com/windowsazure/community" title="Community" class="linkTab">COMMUNITY</a></li>
+            
+              <li><a href="http://www.microsoft.com/windowsazure/free-trial/" title="Free Trial" class="otherLinkTab">FREE TRIAL</a></li>
+            
+              <li><a href="http://www.microsoft.com/windowsazure/offers/" title="Buy" class="otherLinkLastTab">BUY</a></li>
+            
+    </ul>
+  </div>
+</div>
+  <div class="contentPlaceHolder">
+    
+    
+  <div class="navigation" id="Navigation" style="padding-bottom: 96px; width: 0px; display: none; ">
+    <div class="navcontainer">
+      
+<div class="nav">
+    
+    <div id="tocnav">
+        
+        <div class="toclevel0 ancestry">
+            
+            <div class="clip5x9 nav_root">
+                <img src="./Code Quick Start  Create an application that stores a file in Windows Azure storage_files/Msdn_ImageSprite.png" class="cl_nav_bullet" alt="">
+            </div>
+            
+            <div class="nav_div_currentroot">
+                <a href="http://msdn.microsoft.com/en-us/library/windowsazure/dd163896.aspx" id="dd200930_MSDN.10_en-us" title="Windows Azure Platform">Windows Azure Platform</a>
+            </div>
+            
+            <div class="clip5x9 nav_arrows">
+                <img src="./Code Quick Start  Create an application that stores a file in Windows Azure storage_files/Msdn_ImageSprite.png" class="cl_nav_arrow" alt="">
+            </div>
+            
+            <div class="nav_div_currentroot">
+                <a href="http://msdn.microsoft.com/en-us/library/windowsazure/dd179367.aspx" id="ee384255_MSDN.10_en-us" title="Windows Azure">Windows Azure</a>
+            </div>
+            
+            <div class="clip5x9 nav_arrows">
+                <img src="./Code Quick Start  Create an application that stores a file in Windows Azure storage_files/Msdn_ImageSprite.png" class="cl_nav_arrow" alt="">
+            </div>
+            
+            <div class="nav_div_currentroot">
+                <a href="http://msdn.microsoft.com/en-us/library/windowsazure/gg433098.aspx" id="gg432962_MSDN.10_en-us" title="Developing Applications">Developing Applications</a>
+            </div>
+            
+            <div class="clip13x9 nav_arrows">
+                <img src="./Code Quick Start  Create an application that stores a file in Windows Azure storage_files/Msdn_ImageSprite.png" class="cl_nav_dots" alt="">
+            </div>
+            
+            <div class="nav_div_currentroot">
+                <a href="http://msdn.microsoft.com/en-us/library/windowsazure/gg663908.aspx" id="gg651125_MSDN.10_en-us" title="Windows Azure Code Quick Start">Windows Azure Code Quick Start</a>
+            </div>
+            
+        </div>
+        
+        <div class="toclevel1 children">
+            
+            <div class="clip13x9 nav_dots_current">
+                <img src="./Code Quick Start  Create an application that stores a file in Windows Azure storage_files/Msdn_ImageSprite.png" class="cl_nav_dots" alt="">
+            </div>
+            
+            <div>
+                <a href="http://msdn.microsoft.com/en-us/library/windowsazure/gg651132.aspx" title="Code Quick Start: Create and deploy an ASP.NET application in Windows Azure">Code Quick Start: Create and deploy an ASP.NET application in Windows Azure</a>
+            </div>
+            
+            <div class="clip13x9 nav_dots_current">
+                <img src="./Code Quick Start  Create an application that stores a file in Windows Azure storage_files/Msdn_ImageSprite.png" class="cl_nav_dots" alt="">
+            </div>
+            
+            <div>
+                <a href="http://msdn.microsoft.com/en-us/library/windowsazure/gg651130.aspx" id="gg651131_MSDN.10_en-us" title="Code Quick Start: Create and deploy a WCF service in Windows Azure">Code Quick Start: Create and deploy a WCF service in Windows Azure</a>
+            </div>
+            
+            <div class="clip13x9 nav_dots_current">
+                <img src="./Code Quick Start  Create an application that stores a file in Windows Azure storage_files/Msdn_ImageSprite.png" class="cl_nav_dots" alt="">
+            </div>
+            
+            <div class="toclevel1 current">
+                <a href="./Code Quick Start  Create an application that stores a file in Windows Azure storage_files/Code Quick Start  Create an application that stores a file in Windows Azure storage.htm" title="Code Quick Start: Create an application that stores a file in Windows Azure storage">Code Quick Start: Create an application that stores a file in Windows Azure storage</a>
+            </div>
+            
+            <div class="clip13x9 nav_dots_current">
+                <img src="./Code Quick Start  Create an application that stores a file in Windows Azure storage_files/Msdn_ImageSprite.png" class="cl_nav_dots" alt="">
+            </div>
+            
+            <div>
+                <a href="http://msdn.microsoft.com/en-us/library/windowsazure/gg651127.aspx" title="Code Quick Start: Create a console application that lists your Windows Azure hosted services">Code Quick Start: Create a console application that lists your Windows Azure hosted services</a>
+            </div>
+            
+            <div class="clip13x9 nav_dots_current">
+                <img src="./Code Quick Start  Create an application that stores a file in Windows Azure storage_files/Msdn_ImageSprite.png" class="cl_nav_dots" alt="">
+            </div>
+            
+            <div>
+                <a href="http://msdn.microsoft.com/en-us/library/windowsazure/hh180875.aspx" title="Code Quick Start: Capturing diagnostics in your Windows Azure application">Code Quick Start: Capturing diagnostics in your Windows Azure application</a>
+            </div>
+            
+        </div>
+        
+    </div>
+    
+</div>
+
+
+    </div>
+  </div>
+  
+    
+        
+<a href="http://msdn.microsoft.com/en-us/library/windowsazure/gg651129.aspx#" onclick="azure_onIncreaseToc(&#39;ltr&#39;)" class="tocResize azureTocResize" id="TocResize" style="left: 0px; ">
+    <img id="ResizeImageIncrease" class="azureTocResizeIncrease" src="./Code Quick Start  Create an application that stores a file in Windows Azure storage_files/WindowsAzure_ImageSprite.png" onmousedown="azure_onIncreaseToc(&#39;ltr&#39;)" title="Expand" alt="Expand">
+      <img id="ResizeImageReset" class="azureTocResizeReset" src="./Code Quick Start  Create an application that stores a file in Windows Azure storage_files/WindowsAzure_ImageSprite.png" style="display: none; " onmousedown="azure_onResetToc(&#39;ltr&#39;)" title="Minimize" alt="Minimize">
+  </a>
+  
+  
+    <div class="content">
+    <div class="topicContainer" style="">
+      
+      <div xmlns="http://www.w3.org/1999/xhtml">
+<div class="topic" xmlns="http://www.w3.org/1999/xhtml" xmlns:mtps="http://msdn2.microsoft.com/mtps" xmlns:msxsl="urn:schemas-microsoft-com:xslt" xmlns:cs="http://msdn.microsoft.com/en-us/">
+  <h1 class="title">Code Quick Start: Create an application that stores a file in Windows Azure storage</h1><div class="lw_vs"><div id="curversion"><strong>
+            Windows Azure Platform </strong></div></div><div style="clear:both;"></div>
+  
+  <p>Updated: November 14, 2011</p><div id="mainSection">
+    <div id="mainBody">
+      <p>The following steps describe how to create a console application that uses the Windows Azure Storage Services API. Specifically this sample will upload a file to the Windows Azure Blob service.</p>
+      <p>This sample does not get deployed to Windows Azure; rather, it shows you how to call the Windows Azure storage client library through a stand-alone console application.</p>
+      <p>Before proceeding ensure that you meet the prerequisites listed in <a href="http://msdn.microsoft.com/en-us/library/windowsazure/gg663908.aspx">Windows Azure Code Quick Start</a>. If you do not already have a Windows Azure subscription, you can use this topic up through Step 10 to upload a file to the local Blob service running in the Windows Azure storage emulator.</p>
+      <div xmlns=""><script type="text/javascript" async="" src="./Code Quick Start  Create an application that stores a file in Windows Azure storage_files/ms2.js"></script><script type="text/javascript">if (!MTPS) var MTPS = {};if (!MTPS.LocalizedStrings) MTPS.LocalizedStrings = {}; 
+              MTPS.LocalizedStrings.ExpandButtonTooltip = 'Expand'; 
+              MTPS.LocalizedStrings.CollapseButtonTooltip = 'Collapse';</script><div class="LW_CollapsibleArea_TitleDiv"><div><a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><img src="./Code Quick Start  Create an application that stores a file in Windows Azure storage_files/030c41d9079671d09a62d8e2c1db6973.gif" class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"><span class="LW_CollapsibleArea_Title">Creating an application that stores a file in an Azure blob</span></a><div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr"></div></div></div><div class="sectionblock">
+        <div><script type="text/javascript">if (!MTPS) var MTPS = {};if (!MTPS.LocalizedStrings) MTPS.LocalizedStrings = {}; 
+              MTPS.LocalizedStrings.ExpandButtonTooltip = 'Expand'; 
+              MTPS.LocalizedStrings.CollapseButtonTooltip = 'Collapse';</script><div class="LW_CollapsibleArea_TitleDiv"><div><a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><img src="./Code Quick Start  Create an application that stores a file in Windows Azure storage_files/030c41d9079671d09a62d8e2c1db6973.gif" class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"><span class="LW_CollapsibleArea_Title">To create an application that uploads a file to a blob</span></a><div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr"></div></div></div><div class="sectionblock">
+          <ol class="ordered" xmlns="http://www.w3.org/1999/xhtml">
+            <li>
+              <p>Launch Microsoft Visual Studio 2010.</p>
+            </li>
+            <li>
+              <p>On the <strong>File</strong> menu, click <strong>New</strong>, and then click <strong>Project</strong>.</p>
+            </li>
+            <li>
+              <p>Within the <strong>New Project</strong> dialog, navigate to <strong>Installed Templates</strong>, <strong>Visual C#</strong>, and click <strong>Windows</strong>.</p>
+            </li>
+            <li>
+              <p>Click <strong>Console Application</strong>. Choose <strong>.NET Framework 4</strong> from the drop down list. If needed, modify the <strong>Location:</strong> field, which indicates where your solution will be stored. For purposes of this sample, use <strong>StorageSample</strong> as the name of the project. Click <strong>OK</strong> to close the <strong>New Project</strong> dialog.</p>
+            </li>
+            <li>
+              <p>From the <strong>Project</strong> menu, click <strong>Add Reference…</strong>. Within the <strong>Browse</strong> tab of the <strong>Add Reference</strong> dialog, navigate to where your Windows Azure SDK reference libraries are installed, making sure to use the latest version. For example, <strong>C:\Program Files\Windows Azure SDK\v1.6\ref\</strong>. Select <strong>Microsoft.WindowsAzure.StorageClient.dll</strong> and click <strong>OK</strong>.</p>
+            </li>
+            <li>
+              <p>From the <strong>Project</strong> menu, click <strong>Storage Sample Properties</strong>. Within the <strong>Application</strong> tab of the <strong>Properties</strong> dialog, set the <strong>Target Framework</strong> to <strong>.NET Framework 4</strong> (not <strong>.NET Framework 4 Client</strong>). Close the <strong>Properties</strong> dialog.</p>
+            </li>
+            <li>
+              <p>Modify Program.cs to contain the following code:</p>
+              
+
+<div class="codeSnippetContainer" xmlns="http://www.w3.org/1999/xhtml">
+  
+  
+    <div class="codeSnippetContainerTabs">
+        <div class="codeSnippetContainerTab codeSnippetContainerTabSingle" dir="ltr"><a>C#</a></div>
+    </div>
+    <div class="codeSnippetContainerCodeContainer">
+        <div class="codeSnippetToolBar">
+            <div class="codeSnippetToolBarText">
+                <a name="CodeSnippetCopyLink" title="Copy to clipboard." href="javascript:CodeSnippet_CopyCode('CodeSnippetContainerCode_1ca50843-bbf9-4e53-a251-fed010cdac96');">Copy</a>
+            </div>
+        </div>
+        <div id="CodeSnippetContainerCode_1ca50843-bbf9-4e53-a251-fed010cdac96" class="codeSnippetContainerCode" dir="ltr">
+            <div style="color:Black;"><pre><span style="color:Blue;">using</span> System;
+<span style="color:Blue;">using</span> System.Collections.Generic;
+<span style="color:Blue;">using</span> System.Linq;
+<span style="color:Blue;">using</span> System.Text;
+
+<span style="color:Blue;">using</span> Microsoft.WindowsAzure;
+<span style="color:Blue;">using</span> Microsoft.WindowsAzure.StorageClient;
+
+<span style="color:Blue;">namespace</span> StorageSample
+{
+    <span style="color:Blue;">class</span> Program
+    {
+        <span style="color:Blue;">static</span> <span style="color:Blue;">void</span> Main(<span style="color:Blue;">string</span>[] args)
+        {
+            <span style="color:Blue;">try</span>
+            {
+                <span style="color:Green;">// Variables for the cloud storage objects.</span>
+                CloudStorageAccount cloudStorageAccount;
+                CloudBlobClient blobClient;
+                CloudBlobContainer blobContainer;
+                BlobContainerPermissions containerPermissions;
+                CloudBlob blob;
+
+                <span style="color:Green;">// Use the local storage account.</span>
+                cloudStorageAccount = CloudStorageAccount.DevelopmentStorageAccount;
+
+                <span style="color:Green;">// If you want to use Windows Azure cloud storage account, use the following</span>
+                <span style="color:Green;">// code (after uncommenting) instead of the code above.</span>
+                <span style="color:Green;">// cloudStorageAccount = CloudStorageAccount.Parse("DefaultEndpointsProtocol=http;AccountName=your_storage_account_name;AccountKey=your_storage_account_key");</span>
+
+                <span style="color:Green;">// Create the blob client, which provides</span>
+                <span style="color:Green;">// authenticated access to the Blob service.</span>
+                blobClient = cloudStorageAccount.CreateCloudBlobClient();
+
+                <span style="color:Green;">// Get the container reference.</span>
+                blobContainer = blobClient.GetContainerReference(<span style="color:#A31515;">"mycontainer"</span>);
+                <span style="color:Green;">// Create the container if it does not exist.</span>
+                blobContainer.CreateIfNotExist();
+
+                <span style="color:Green;">// Set permissions on the container.</span>
+                containerPermissions = <span style="color:Blue;">new</span> BlobContainerPermissions();
+                <span style="color:Green;">// This sample sets the container to have public blobs. Your application</span>
+                <span style="color:Green;">// needs may be different. See the documentation for BlobContainerPermissions</span>
+                <span style="color:Green;">// for more information about blob container permissions.</span>
+                containerPermissions.PublicAccess = BlobContainerPublicAccessType.Blob;
+                blobContainer.SetPermissions(containerPermissions);
+
+                <span style="color:Green;">// Get a reference to the blob.</span>
+                blob = blobContainer.GetBlobReference(<span style="color:#A31515;">"myfile.txt"</span>);
+
+                <span style="color:Green;">// Upload a file from the local system to the blob.</span>
+                Console.WriteLine(<span style="color:#A31515;">"Starting file upload"</span>);
+                blob.UploadFile(<span style="color:#A31515;">@"c:\myfiles\myfile.txt"</span>);  <span style="color:Green;">// File from local storage.</span>
+                Console.WriteLine(<span style="color:#A31515;">"File upload complete to blob "</span> + blob.Uri);
+            }
+            <span style="color:Blue;">catch</span> (StorageClientException e)
+            {
+                Console.WriteLine(<span style="color:#A31515;">"Storage client error encountered: "</span> + e.Message);
+
+                <span style="color:Green;">// Exit the application with exit code 1.</span>
+                System.Environment.Exit(1);
+            }
+            <span style="color:Blue;">catch</span> (Exception e)
+            {
+                Console.WriteLine(<span style="color:#A31515;">"Error encountered: "</span> + e.Message);
+
+                <span style="color:Green;">// Exit the application with exit code 1.</span>
+                System.Environment.Exit(1);
+            }
+            <span style="color:Blue;">finally</span>
+            {
+                <span style="color:Green;">// Exit the application.</span>
+                System.Environment.Exit(0);
+            }
+        }
+    }
+}
+
+</pre></div>
+            
+        </div>
+    </div>
+</div>
+
+            </li>
+            <li>
+              <p>Create a file on your local computer named <strong>c:\myfiles\myfile.txt</strong>. Alternatively, use an existing file, but change the following code to reference the existing file instead of <strong>c:\myfiles\myfile.txt</strong>:</p>
+              
+
+<div class="codeSnippetContainer" xmlns="http://www.w3.org/1999/xhtml">
+  
+  
+    <div class="codeSnippetContainerTabs">
+        <div class="codeSnippetContainerTab codeSnippetContainerTabSingle" dir="ltr"><a>C#</a></div>
+    </div>
+    <div class="codeSnippetContainerCodeContainer">
+        <div class="codeSnippetToolBar">
+            <div class="codeSnippetToolBarText">
+                <a name="CodeSnippetCopyLink" title="Copy to clipboard." href="javascript:CodeSnippet_CopyCode('CodeSnippetContainerCode_1172ea0a-d6c2-4de5-bf73-3842243f8177');">Copy</a>
+            </div>
+        </div>
+        <div id="CodeSnippetContainerCode_1172ea0a-d6c2-4de5-bf73-3842243f8177" class="codeSnippetContainerCode" dir="ltr">
+            <div style="color:Black;"><pre>blob.UploadFile(<span style="color:#A31515;">@"c:\myfiles\myfile.txt"</span>);  <span style="color:Green;">// File from local storage.</span>
+
+</pre></div>
+            
+        </div>
+    </div>
+</div>
+
+            </li>
+            <li>
+              <p>Save Program.cs.</p>
+            </li>
+            <li>
+              <p>Since the code is using the local Blob service, start the Windows Azure storage emulator. In Windows, click the Windows Start icon, click <strong>All Programs</strong>, click <strong>Windows Azure Emulators – November 2011</strong>, and click <strong>Storage Emulator</strong>. Alternatively, if the <strong>Windows Azure Emulator</strong> icon is in your task bar, you can start the storage emulator via right-clicking the <strong>Windows Azure Emulator</strong> icon and then clicking <strong>Start Storage Emulator</strong>.</p>
+            </li>
+            <li>
+              <p>On the <strong>Debug</strong> menu, click <strong>Start Without Debugging</strong>. Assuming no compile errors or client machine errors, the program should now run successfully. Copy the URI displayed by the application to your browser, and you should be able to view the file that you uploaded to the local Blob service, since you are using the local storage account. The following code was used to specify the local storage account:</p>
+              
+
+<div class="codeSnippetContainer" xmlns="http://www.w3.org/1999/xhtml">
+  
+  
+    <div class="codeSnippetContainerTabs">
+        <div class="codeSnippetContainerTab codeSnippetContainerTabSingle" dir="ltr"><a>C#</a></div>
+    </div>
+    <div class="codeSnippetContainerCodeContainer">
+        <div class="codeSnippetToolBar">
+            <div class="codeSnippetToolBarText">
+                <a name="CodeSnippetCopyLink" title="Copy to clipboard." href="javascript:CodeSnippet_CopyCode('CodeSnippetContainerCode_8dd3c5c8-607e-4fd9-a327-9dbbcbe8acd8');">Copy</a>
+            </div>
+        </div>
+        <div id="CodeSnippetContainerCode_8dd3c5c8-607e-4fd9-a327-9dbbcbe8acd8" class="codeSnippetContainerCode" dir="ltr">
+            <div style="color:Black;"><pre>cloudStorageAccount = CloudStorageAccount.DevelopmentStorageAccount;
+</pre></div>
+            
+        </div>
+    </div>
+</div>
+
+              <p>For more information about the storage emulator, see <a href="http://msdn.microsoft.com/en-us/library/windowsazure/ff683674.aspx">Configuring and Using the Storage Emulator with Visual Studio</a>.</p>
+            </li>
+            <li>
+              <p>Now let’s set up the code to upload the file to your Windows Azure storage account, instead of to your local storage account. If you haven’t already done so, create a Windows Azure storage account by following the instructions at <a href="http://msdn.microsoft.com/en-us/library/windowsazure/gg433066.aspx">How to Create a Storage Account for a Windows Azure Subscription</a>.</p>
+            </li>
+            <li>
+              <p>In Program.cs, comment out the following code line, since you’ll be using a Windows Azure storage account and not the development storage accoount:</p>
+              
+
+<div class="codeSnippetContainer" xmlns="http://www.w3.org/1999/xhtml">
+  
+  
+    <div class="codeSnippetContainerTabs">
+        <div class="codeSnippetContainerTab codeSnippetContainerTabSingle" dir="ltr"><a>C#</a></div>
+    </div>
+    <div class="codeSnippetContainerCodeContainer">
+        <div class="codeSnippetToolBar">
+            <div class="codeSnippetToolBarText">
+                <a name="CodeSnippetCopyLink" title="Copy to clipboard." href="javascript:CodeSnippet_CopyCode('CodeSnippetContainerCode_0b053ddd-a291-43be-928c-899e627a218a');">Copy</a>
+            </div>
+        </div>
+        <div id="CodeSnippetContainerCode_0b053ddd-a291-43be-928c-899e627a218a" class="codeSnippetContainerCode" dir="ltr">
+            <div style="color:Black;"><pre><span style="color:Green;">// cloudStorageAccount = CloudStorageAccount.DevelopmentStorageAccount;</span>
+
+</pre></div>
+            
+        </div>
+    </div>
+</div>
+
+            </li>
+            <li>
+              <p>Modify the Program.cs code to use your storage account information. Your values are needed in this section of code, which specifies the connection string to use for Windows Azure storage: </p>
+              
+
+<div class="codeSnippetContainer" xmlns="http://www.w3.org/1999/xhtml">
+  
+  
+    <div class="codeSnippetContainerTabs">
+        <div class="codeSnippetContainerTab codeSnippetContainerTabSingle" dir="ltr"><a>C#</a></div>
+    </div>
+    <div class="codeSnippetContainerCodeContainer">
+        <div class="codeSnippetToolBar">
+            <div class="codeSnippetToolBarText">
+                <a name="CodeSnippetCopyLink" title="Copy to clipboard." href="javascript:CodeSnippet_CopyCode('CodeSnippetContainerCode_f7469045-53cc-4b6e-86a6-e51e1efd5224');">Copy</a>
+            </div>
+        </div>
+        <div id="CodeSnippetContainerCode_f7469045-53cc-4b6e-86a6-e51e1efd5224" class="codeSnippetContainerCode" dir="ltr">
+            <div style="color:Black;"><pre>cloudStorageAccount = CloudStorageAccount.Parse(<span style="color:#A31515;">"DefaultEndpointsProtocol=http;AccountName=your_storage_account_name;AccountKey=your_storage_account_key"</span>);
+
+</pre></div>
+            
+        </div>
+    </div>
+</div>
+
+              <p>Ensure this line of code is no longer commented out. Modify the values assigned to <code>your_storage_account_name</code> and <code>your_storage_account_key</code> to use your storage account name and your storage account access key, respectively. You can use the Windows Azure Platform Management Portal, <a href="http://windows.azure.com/">http://windows.azure.com</a>, to determine both of those values. Specifically, within <a href="http://windows.azure.com/">http://windows.azure.com</a>, you can navigate to <strong>Hosted Services, Storage Accounts, and CDN</strong>, and then click <strong>Storage Accounts</strong>, to see the storage account name(s) listed for your subscription(s). Click a storage account to see the storage account properties page. The following shows the storage account properties page, with callouts to where you would see the storage account name and the primary access key:</p>
+              <img id="e47c6513-a7bc-4210-a825-85fbb63bd061" alt="Storage account properties" src="./Code Quick Start  Create an application that stores a file in Windows Azure storage_files/IC481810.png" title="Storage account properties" xmlns="">
+              <p>In the code above, replace the text <code>your_storage_account_name</code> with the name of your storage account. Replace <code>your_storage_account_key</code> with either the primary or secondary storage access key value. For more information about connection strings, see <a href="http://msdn.microsoft.com/en-us/library/windowsazure/ee758697.aspx">Configuring Connection Strings</a>.</p>
+              <div class="alert">
+                <table>
+                  <tbody><tr>
+                    <th align="left">
+                      <img id="security" alt="security" src="./Code Quick Start  Create an application that stores a file in Windows Azure storage_files/IC17938.gif" title="security" xmlns="">Security Note </th>
+                  </tr>
+                  <tr>
+                    <td>
+										Ensure that you maintain secrecy of your storage account keys. Secure your application and source, including Program.cs, since it now contains your storage account credentials.<p></p></td>
+                  </tr>
+                </tbody></table>
+                <p>
+                  
+                </p>
+              </div>
+            </li>
+            <li>
+              <p>Save Program.cs.</p>
+            </li>
+            <li>
+              <p>On the <strong>Debug</strong> menu, click <strong>Start Without Debugging</strong>. Assuming no compile errors or client machine errors, the program should now run successfully. Copy the URI displayed by the application to your browser, and you should be able to view the file that you uploaded to your Windows Azure storage account.</p>
+            </li>
+          </ol>
+        </div></div>
+      </div></div>
+      <div id="sectionSection1" class="section">
+        <p>The sample code acquires an instance of the <a href="http://msdn.microsoft.com/en-us/library/windowsazure/microsoft.windowsazure.cloudstorageaccount.aspx">CloudStorageAccount</a> class, which encapsulates the credentials needed to authenticate a request against the storage services. This object is then used to create an instance of the <a href="http://msdn.microsoft.com/en-us/library/windowsazure/microsoft.windowsazure.storageclient.cloudblobclient.aspx">CloudBlobClient</a> class, which provides access to the Blob service. Using the <code>CloudBlobClient</code> instance, the sample acquires a reference to a blob container named <strong>mycontainer</strong>, creating it if it does not exist. The container’s permission is set to allow anonymous access at the blob level. For information about the various types of permissions available to a container, see <a href="http://msdn.microsoft.com/en-us/library/windowsazure/microsoft.windowsazure.storageclient.blobcontainerpermissions.aspx">BlobContainerPermissions</a>. Finally, the sample uploads a local file to the blob named myfile.txt by calling the <a href="http://msdn.microsoft.com/en-us/library/windowsazure/ee772820.aspx">UploadFile</a> method. Note that the blob name need not be the same name as the local file name.</p>
+        <p>In addition to being able to view the blob using the blob URI you can view the blob within Visual Studio. For information on how to view the blob within Visual Studio, see <a href="http://msdn.microsoft.com/en-us/library/windowsazure/ff683677.aspx">Browsing Storage Resources with the Windows Azure Storage Explorer</a>. Also, a variety of third-party Windows Azure storage viewing software is available and can be found by searching online.</p>
+        <p>As you would expect for a storage entity, there are many methods and properties available for blobs. For example, you can upload text to a blob through the <a href="http://msdn.microsoft.com/en-us/library/windowsazure/ee772818.aspx">UploadText</a> method, or download a blob to a file through the <a href="http://msdn.microsoft.com/en-us/library/windowsazure/ee772800.aspx">DownloadToFile</a> method. If you want to delete the blob that you uploaded, call the <a href="http://msdn.microsoft.com/en-us/library/windowsazure/ee772797.aspx">Delete</a> method. For more information about blob methods and properties, see <a href="http://msdn.microsoft.com/en-us/library/windowsazure/microsoft.windowsazure.storageclient.cloudblob.aspx">CloudBlob</a>.</p>
+        <p>Similarly, there are many methods and properties for containers. For example, you can enumerate the blobs in a container by using the <a href="http://msdn.microsoft.com/en-us/library/windowsazure/ee772878.aspx">ListBlobs</a> method, or delete a container through the <a href="http://msdn.microsoft.com/en-us/library/windowsazure/ee772840.aspx">Delete</a> method. For more information about container methods and properties, see <a href="http://msdn.microsoft.com/en-us/library/windowsazure/microsoft.windowsazure.storageclient.cloudblobcontainer.aspx">CloudBlobContainer</a>.</p>
+        <p>Other types of clients besides <strong>CloudBlobClient</strong> that can be acquired through an instance of the <strong>CloudStorageAccount</strong> class are <a href="http://msdn.microsoft.com/en-us/library/windowsazure/microsoft.windowsazure.storageclient.cloudtableclient.aspx">CloudTableClient</a> and <a href="http://msdn.microsoft.com/en-us/library/windowsazure/microsoft.windowsazure.storageclient.cloudqueueclient.aspx">CloudQueueClient</a>, which are for used for operations on Windows Azure tables and queues, respectively. For more information about the .NET managed library for Windows Azure Storage Services, see <a href="http://msdn.microsoft.com/en-us/library/windowsazure/microsoft.windowsazure.storageclient.aspx">Microsoft.WindowsAzure.StorageClient</a>. </p>
+        <p>In addition to the .NET managed library provided by the Windows Azure Storage Services API, a REST API is also provided for storage functionality. For more information, see <a href="http://msdn.microsoft.com/en-us/library/windowsazure/dd179355.aspx">Windows Azure Storage Services REST API Reference</a>.</p>
+      </div>
+      <h2 class="heading">
+        <span id="seeAlsoNoToggle">See Also</span>
+      </h2>
+      <div id="seeAlsoSection" class="section">
+        <h4 class="subHeading">Concepts</h4>
+        <a href="http://msdn.microsoft.com/en-us/library/windowsazure/ee691964.aspx">Understanding Block Blobs and Page Blobs</a>
+        <br>
+        <a href="http://msdn.microsoft.com/en-us/library/windowsazure/ee924681.aspx">Using the Windows Azure Storage Services</a>
+        <br>
+        <a href="http://msdn.microsoft.com/en-us/library/windowsazure/windows-azure-code-samples.aspx">Windows Azure Code Samples</a>
+        <br>
+        <h4 class="subHeading">Other Resources</h4>
+        <a href="http://msdn.microsoft.com/en-us/windowsazure/wazplatformtrainingcourse_windowsazure_unit">Windows Azure Hands-on Labs and Videos</a>
+        <br>
+        <br>
+      </div>
+    </div>
+    <p>
+      
+    </p>
+  </div>
+</div></div>
+    </div>
+  </div>
+  
+
+  </div>
+  <div class="footer">
+    
+
+<div id="footer" class="footerContainer cl_footer_slice">
+  <div class="footerLogoContainer">
+    <div class="footerContent">
+    <div class="copyright">
+      © 2011 Microsoft. All rights reserved.</div>
+    <div class="footerLogo cl_footer_logo"></div>
+    <a href="http://msdn.microsoft.com/cc300389.aspx">Terms of Use</a><span class="pipe"> | </span>
+    <a href="http://www.microsoft.com/library/toolbar/3.0/trademarks/en-us.mspx">Trademarks</a><span class="pipe"> | </span>
+    <a href="http://www.microsoft.com/info/privacy.mspx">Privacy Statement</a>
+    <span class="pipe">| </span>
+    <span class="FeedbacklinkDisabled" id="FeedbacklinkDisabled">Feedback</span>
+    <a id="Feedbacklink" title="Feedback" class="FeedbackLink" href="javascript:void(0)">
+      Feedback
+        <span class="FeedbackButton clip20x21" id="FeedbackButton">
+          <img id="feedBackImg" class="cl_footer_feedback_icon" src="./Code Quick Start  Create an application that stores a file in Windows Azure storage_files/Msdn_ImageSprite.png" alt="Feedback">
+        </span>
+      </a>
+    
+  <div id="FeedbackContainer" class="FeedbackContainer">
+    <form method="post" action="http://msdn.microsoft.com/en-us/library/feedback/add/gg651129.aspx">
+    <div class="FeedbackTitleContainer">
+        <div class="FeedbackTitle">
+            Feedback</div>
+        <div class="FeedbackCancel">
+            <a href="javascript:;" onclick="document.getElementById(&#39;FeedbackContainer&#39;).style.display = &#39;none&#39;;">x</a>
+            </div>
+    </div>
+    <div class="FeedbackData">
+        <div class="FeedbackInfoText">
+            Tell us about your experience...
+        </div>
+        <div class="QuestionText">
+            Did the page load quickly?
+        </div>
+        <div class="AnswerText">
+            
+            <span>
+                Yes<span>
+                    <input id="searchBox" name="searchBox" type="radio" value="1"></span></span>
+            
+            <span>
+                No<span>
+                    <input id="searchBox" name="searchBox" type="radio" value="0"></span></span>
+            
+        </div>
+        <div class="QuestionText">
+            Do you like the page design?
+        </div>
+        <div class="AnswerText">
+            
+            <span>
+                Yes<span>
+                    <input id="tabbedCode" name="tabbedCode" type="radio" value="1"></span></span>
+            
+            <span>
+                No<span>
+                    <input id="tabbedCode" name="tabbedCode" type="radio" value="0"></span></span>
+            
+        </div>
+        <div class="QuestionText">
+            How useful is this topic?
+        </div>
+        <div class="FeedbackGraphicHolder clip269x23">            
+                <img alt="" src="./Code Quick Start  Create an application that stores a file in Windows Azure storage_files/Msdn_ImageSprite.png" class="cl_online_scale FeedbackSiderGraphic">
+        </div>        
+            <div class="RadioButtonHolder"><div class="RateRadioOne">
+                    <input id="topicUseful" name="topicUseful" title="Really disliked it" type="radio" value="1">
+                </div>
+               <div class="RateRadio">
+                    <input id="topicUseful" name="topicUseful" title="Disliked it" type="radio" value="2">
+                </div>
+               <div class="RateRadio">
+                    <input id="topicUseful" name="topicUseful" title="OK" type="radio" value="3">
+                </div>
+               <div class="RateRadio">
+                    <input id="topicUseful" name="topicUseful" title="Good" type="radio" value="4">
+                </div>
+               <div class="RateRadioLast">
+                    <input id="topicUseful" name="topicUseful" title="Really Good" type="radio" value="5">
+                </div>
+               
+            </div>            
+        <div class="QuestionText">
+            Tell us more
+        </div>
+        <div class="FeedbackTextAreaContainer">
+            <textarea id="feedbackText" data-maxlength="4000" name="feedbackText" cols="25" rows="5" class="FeedbackTextArea"></textarea>
+            
+            <textarea id="feedbackDescription" name="feedbackDescription" cols="25" rows="10" style="display:none;">Enter description here.</textarea>
+            <input type="hidden" id="feedbackPriority" name="feedbackPriority" value="">
+            <input type="hidden" id="feedbackSourceUrl" name="feedbackSourceUrl" value="">
+            <input type="hidden" id="ClientIP" name="ClientIP" value="">
+            <input type="hidden" id="ClientOS" name="ClientOS" value="">
+            <input type="hidden" id="ClientBrowser" name="ClientBrowser" value="">
+            <input type="hidden" id="ClientTime" name="ClientTime" value="">
+            <input type="hidden" id="ClientTimeZone" name="ClientTimeZone" value="">
+            
+            
+        </div>
+        <div>
+            <input type="submit" value="Send" class="FeedbackSubmit" onclick="document.getElementById(&#39;feedbackDescription&#39;).value=&#39;&#39;;document.getElementById(&#39;feedBackVersion&#39;).value = &#39;-1&#39;;">
+        </div>
+    </div>
+    <input type="hidden" id="returnUrl" name="returnUrl" value="http://msdn.microsoft.com/en-us/library/windowsazure/gg651129.aspx">
+    
+    
+    <input type="hidden" id="feedBackVersion" name="feedBackVersion" value="1">
+    
+  </form> 
+</div>
+
+    </div>
+  </div>
+</div>
+
+  </div>
+  <div class="MetricsContainer">
+    
+    <div class="WebtrendsContainer">
+      
+
+<script type="text/javascript" language="javascript">
+//<![CDATA[
+  var literalNormalizedUrl = '/en-us/library/windowsazure/gg651129(d=lightweight,l=en-us,v=MSDN.10).aspx';
+  var wt_nvr_ru = 'WT_NVR_RU';
+  var wt_fpcdom = '.microsoft.com';
+  var wt_domlist = 'msdn.microsoft.com';
+  var wt_pathlist = '';
+  var wt_paramlist = 'DCSext.mtps_devcenter';
+  var wt_siteid = 'MSDN';
+  var gDomain = 'm.webtrends.com';
+  var gDcsId = 'dcsmgru7m99k7mqmgrhudo0k8_8c6m';
+  var gFpc = 'WT_FPC';
+  if (document.cookie.indexOf(gFpc + "=") == -1) {
+    document.write("<scr" + "ipt type='text/javascript' src='" + "http" + (window.location.protocol.indexOf('https:') == 0 ? 's' : '') + "://" + gDomain + "/" + gDcsId + "/wtid.js" + "'><\\/scr" + "ipt>");
+  }
+  var detectedLocale = 'en-us';
+  var wtsp = 'windowsazure';
+  var gTrackEvents = '0';
+/*]]>*/
+</script>
+<noscript>&lt;div&gt;&lt;img alt="DCSIMG" id="Img1" width="1" height="1" src="http://m.webtrends.com/dcsmgru7m99k7mqmgrhudo0k8_8c6m/njs.gif?dcsuri=/nojavascript&amp;amp;WT.js=No" /&gt;&lt;/div&gt;</noscript>
+
+
+    </div>
+    
+    <div class="OmnitureContainer">
+      
+
+
+
+<script type="text/javascript">
+  var omni_guid = 'dc985b59-73d8-47ae-93b4-56552edcdef2'; 
+</script>
+
+
+
+<noscript>
+    &lt;a href="http://www.omniture.com" title="Web Analytics"&gt;
+        &lt;img src="//msstonojsmsdn.112.2o7.net/b/ss/msstonojsmsdn/1/H.20.2--NS/0" height="1" width="1" border="0" alt="" /&gt;&lt;/a&gt;
+</noscript>
+
+
+    </div>
+    
+  </div>
+<script defer="defer" language="javascript" type="text/javascript" src="./Code Quick Start  Create an application that stores a file in Windows Azure storage_files/broker.js"></script>
+<script type="text/javascript" src="./Code Quick Start  Create an application that stores a file in Windows Azure storage_files/7cb88c9822af543ce6ef017896bc5535.js" xmlns="http://www.w3.org/1999/xhtml"></script><script type="text/javascript" language="javascript" src="./Code Quick Start  Create an application that stores a file in Windows Azure storage_files/d0c374ba84717dc6caec77608ba0ced7.js" xmlns="http://www.w3.org/1999/xhtml"></script><script type="text/javascript" language="javascript" src="./Code Quick Start  Create an application that stores a file in Windows Azure storage_files/Topic.js" xmlns="http://www.w3.org/1999/xhtml"></script><script type="text/javascript" language="javascript" src="./Code Quick Start  Create an application that stores a file in Windows Azure storage_files/TocResize.js" xmlns="http://www.w3.org/1999/xhtml"></script><script type="text/javascript" language="javascript" src="./Code Quick Start  Create an application that stores a file in Windows Azure storage_files/PrintDropdown.js" xmlns="http://www.w3.org/1999/xhtml"></script><script type="text/javascript" language="javascript" src="./Code Quick Start  Create an application that stores a file in Windows Azure storage_files/TopicNotInScope.js" xmlns="http://www.w3.org/1999/xhtml"></script><script src="./Code Quick Start  Create an application that stores a file in Windows Azure storage_files/library.js" type="text/javascript" xmlns="http://www.w3.org/1999/xhtml"></script>
+
+<script src="./Code Quick Start  Create an application that stores a file in Windows Azure storage_files/broker-config.js"></script><div style="display: none; " id="_WEDCSInsertedData"><iframe id="_msnFrame" src="./Code Quick Start  Create an application that stores a file in Windows Azure storage_files/Sync.htm" style="z-index:-1;height:1px;width:1px;display:none;visibility:hidden;" onload="javascript:MscomBeacon();"></iframe></div></body></html>
