@@ -5,6 +5,9 @@ using System.Text;
 
 using Microsoft.WindowsAzure;
 using Microsoft.WindowsAzure.StorageClient;
+using Microsoft.WindowsAzure.Storage;
+using Microsoft.WindowsAzure.Storage.Blob;
+//using Microsoft.WindowsAzure.StorageClient;
 
 namespace StorageSample
 {
