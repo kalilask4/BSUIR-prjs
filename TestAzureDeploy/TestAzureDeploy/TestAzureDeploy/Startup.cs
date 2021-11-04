@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.UI;
@@ -17,6 +18,9 @@ namespace TestAzureDeploy
 {
     public class Startup
     {
+        private string _fio = null;
+        public string FIO => _fio;
+
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -34,11 +38,19 @@ namespace TestAzureDeploy
             services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
                 .AddEntityFrameworkStores<ApplicationDbContext>();
             services.AddRazorPages();
+            _fio = Configuration["FIO:ServiceApiKey"];
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+            //+test using secretkey
+            app.Run(async (context) =>
+            {
+                var result = string.IsNullOrEmpty(_fio) ? "FIO enpty" : _fio;
+                await context.Response.WriteAsync($"00321, V&CC, 04.11.2021, 23.20, {result}");
+            });
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
