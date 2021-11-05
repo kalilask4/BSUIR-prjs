@@ -45,11 +45,11 @@ namespace TestAzureDeploy
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             //+test using secretkey
-            app.Run(async (context) =>
-            {
-                var result = string.IsNullOrEmpty(_fio) ? "FIO enpty" : _fio;
-                await context.Response.WriteAsync($"00321, V&CC, 04.11.2021, 23.20, {result}");
-            });
+            //app.Run(async (context) =>
+            //{
+            //    var result = string.IsNullOrEmpty(_fio) ? "FIO enpty" : _fio;
+            //    await context.Response.WriteAsync($"00321, V&CC, 04.11.2021, 23.20, {result}");
+            //});
 
             if (env.IsDevelopment())
             {
