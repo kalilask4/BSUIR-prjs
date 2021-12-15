@@ -1,11 +1,11 @@
 //
 // Registry.cpp
 //
-
+#define _CRT_SECURE_NO_WARNINGS
 #include <objbase.h>
 #include <assert.h>
+#include "REGISTRY.H"
 
-#include "Registry.h"
 
 ////////////////////////////////////////////////////////
 //

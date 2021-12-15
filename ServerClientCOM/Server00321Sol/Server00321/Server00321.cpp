@@ -4,8 +4,26 @@
 #include <windows.h>
 #include <initguid.h>
 #include "CMath.h"
-long g_lObjs = 0;
-long g_lLocks = 0;
+#include "../REGISTRY.H"
+
+///////////////////////////////////////////////////////////
+//
+// Global variables
+//
+static HMODULE g_hModule = NULL;   // DLL module handle
+
+// Friendly name of component
+const char g_szFriendlyName[] = "TCP_Lab1 Math Component 00321";
+
+// Version-independent ProgID
+const char g_szVerIndProgID[] = "Math.Component";
+
+// ProgID
+const char g_szProgID[] = "Math.Component.1";
+
+long g_lObjs = 0;   //счетчик объектов
+long g_lLocks = 0;  //счетчик блокировок
+
 STDAPI DllGetClassObject(REFCLSID rclsid, REFIID riid, void**
 	ppv)
 {
@@ -33,4 +51,27 @@ STDAPI DllCanUnloadNow(void)
 		return(S_FALSE);
 	else
 		return(S_OK);
+}
+
+//
+// Server registration
+//
+STDAPI DllRegisterServer()
+{
+	return RegisterServer(g_hModule,
+		CLSID_MATH,
+		g_szFriendlyName,
+		g_szVerIndProgID,
+		g_szProgID);
+}
+
+
+//
+// Server unregistration
+//
+STDAPI DllUnregisterServer()
+{
+	return UnregisterServer(CLSID_MATH,
+		g_szVerIndProgID,
+		g_szProgID);
 }

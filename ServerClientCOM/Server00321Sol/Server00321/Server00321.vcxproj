@@ -30,7 +30,7 @@
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v142</PlatformToolset>
-    <CharacterSet>Unicode</CharacterSet>
+    <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
@@ -151,9 +151,11 @@
     <None Include="Server00321.def" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\REGISTRY.H" />
     <ClInclude Include="CMath.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\REGISTRY.CPP" />
     <ClCompile Include="CMath.cpp" />
     <ClCompile Include="Server00321.cpp" />
   </ItemGroup>

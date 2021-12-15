@@ -21,6 +21,9 @@
     <ClCompile Include="Server00321.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
+    <ClCompile Include="..\REGISTRY.CPP">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="IMath.h">
@@ -32,6 +35,9 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CMath.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="..\REGISTRY.H">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
   </ItemGroup>
