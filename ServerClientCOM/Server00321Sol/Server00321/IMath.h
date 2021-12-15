@@ -23,7 +23,9 @@ DEFINE_GUID(CLSID_MATH,
 DEFINE_GUID(IID_IMATH,
 	0x8650651b, 0xdea8, 0x4a8c, 0xb5, 0xca, 0x9b, 0x1d, 0x85, 0xa6, 0x43, 0x72);
 
-
+// {2F85142B-F184-4106-B73A-767845260D1F}
+DEFINE_GUID(IID_IVer,
+	0x2f85142b, 0xf184, 0x4106, 0xb7, 0x3a, 0x76, 0x78, 0x45, 0x26, 0xd, 0x1f);
 
 
 class IMath : public IUnknown
@@ -33,4 +35,9 @@ public:
  STDMETHOD( Subtract( long, long, long* )) PURE;
  STDMETHOD( Multiply( long, long, long* )) PURE;
  STDMETHOD( Divide( long, long, long* )) PURE;
+};
+
+class IVer : public IUnknown {
+public:
+	STDMETHOD(GetAuthor(wchar_t** autor)) PURE;
 };
