@@ -5,7 +5,7 @@
 #include "IMath.h"
 extern long g_lObjs; //счетчик компонентов, созданных на базе сервера; память для него будет выделена в другом файле
 extern long g_lLocks; //счетчик блокировок
-class CMath : public IMath, IVer
+class CMath : public IMath, IVer, IFN_14
 {
 protected:
 	// Reference count
@@ -28,6 +28,12 @@ public:
 	
 	//IVer
 	STDMETHOD(GetAuthor(wchar_t** autor));
+
+	//IFN_14
+	STDMETHOD(Fun0(int, int, float*));
+	double Fun141(int, int);
+	int Fun142(int, int, int);
+	STDMETHOD(Fun143(double, double*));
 	
 };
 class MathClassFactory : public IClassFactory

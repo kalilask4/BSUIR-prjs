@@ -33,6 +33,8 @@ STDMETHODIMP CMath::QueryInterface(REFIID riid, void** ppv)
 		*ppv = (IMath*)this;
 	else if (riid == IID_IVer)
 			*ppv = (IVer*)this;
+	else if (riid == IID_IFN_14)
+		*ppv = (IFN_14*)this;
 
 	
 
@@ -96,6 +98,37 @@ STDMETHODIMP CMath::GetAuthor(wchar_t** author)
 	wchar_t* p = (wchar_t*)CoTaskMemAlloc(200);
 	lstrcpyW(p, L"From COM object 00321 kalilask4\n");
 	*author = p;
+	return S_OK;
+}
+
+STDMETHODIMP CMath::Fun0(int lOp1, int lOp2, float* pResult)
+{
+
+	*pResult = lOp1 * lOp2 * 10;
+	return S_OK;
+}
+
+double CMath::Fun141(int lOp1, int lOp2)
+{
+	double r = ((double)lOp1 + (double)lOp2) / 2.0;
+	return r;
+}
+
+int CMath::Fun142(int lOp1, int lOp2, int lOp3)
+{
+	int r;
+	if (lOp1 > lOp2)
+		r = lOp1;
+	else
+		r = lOp2;
+	if (lOp3 > r)
+		r = lOp3;
+	return r;
+}
+
+STDMETHODIMP CMath::Fun143(double lOp1, double* pResult)
+{
+	*pResult = lOp1 * 0.7;
 	return S_OK;
 }
 
