@@ -18,6 +18,10 @@ DEFINE_GUID(IID_IMATH ,
 DEFINE_GUID(IID_IVer ,
 	0x2f85142b, 0xf184, 0x4106, 0xb7, 0x3a, 0x76, 0x78, 0x45, 0x26, 0xd, 0x1f);
 
+// {ED809CF3-DEE3-47F4-B8A3-BF5660B21104}
+DEFINE_GUID(IID_IFN_14,
+	0xed809cf3, 0xdee3, 0x47f4, 0xb8, 0xa3, 0xbf, 0x56, 0x60, 0xb2, 0x11, 0x4);
+
 
 
 
@@ -35,6 +39,16 @@ public:
 class IVer : public IUnknown {
 public:
 	STDMETHOD(GetAuthor(wchar_t**autor)) PURE;
+};
+
+
+class IFN_14 : public IUnknown
+{
+public:
+	STDMETHOD(Fun0(int, int, float*)) PURE;
+	virtual double Fun141(int, int) PURE;
+	virtual int Fun142(int, int, int) PURE;
+	STDMETHOD(Fun143(double, double*)) PURE;
 };
 
 
