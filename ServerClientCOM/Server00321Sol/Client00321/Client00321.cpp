@@ -80,6 +80,39 @@ int main(int argc, char* argv[])
     pVer->Release();
     wprintf(L"%s", str_author);
 
+    /*---------SR----------------*/
+    printf("\nSR. 00321. kalilask4 V 14 \n");
+    IUnknown* pUnkSR;
+    hr = pCF->CreateInstance(NULL, IID_IUnknown, (void**)&pUnkSR);
+
+    // Release the class factory pCF->Release();
+    if (FAILED(hr))
+    {
+        printf("Failed to create server instance. HR =%X \n", hr); return -1;
+    }
+    // printf("Instance created \n");
+
+    IFN_14* pIFN_14SR = NULL;
+    hr = pUnkSR->QueryInterface(IID_IFN_14, (LPVOID*)&pIFN_14SR);
+    if (FAILED(hr))
+    {
+        printf("QueryInterface() for SR_14 failed \n"); return -1;
+    }
+    pUnkSR->Release();
+
+    float floatResult1 = 0;
+    pIFN_14SR->Fun0(3, 8, &floatResult1);
+    printf("srTest 3 * 8 * 10 = %lf \n", floatResult1);
+
+    printf("sr Fun141 - (10+6)/2.0 = %lf \n", pIFN_14SR->Fun141(10, 6));
+
+    printf("sr Fun142 - max 10 16 or 5 = %li \n", pIFN_14SR->Fun142(10, 16, 5));
+
+    double doubleResult;
+    pIFN_14SR->Fun143(11.0, &doubleResult);
+    printf("sr Fun142 - 11.0 * 0.7 = %lf \n", doubleResult);
+    pIFN_14SR->Release();
+
        
     
     printf("\nShuting down COM\n");
