@@ -34,10 +34,10 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="CMath.h">
-      <Filter>Файлы ресурсов</Filter>
-    </ClInclude>
     <ClInclude Include="REGISTRY.H">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="CMath.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
   </ItemGroup>
