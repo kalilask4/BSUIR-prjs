@@ -4,7 +4,9 @@
 #include <windows.h>
 #include <initguid.h>
 #include "CMath.h"
-#include "../REGISTRY.H"
+#include "REGISTRY.H"
+
+
 
 ///////////////////////////////////////////////////////////
 //
@@ -23,6 +25,8 @@ const char g_szProgID[] = "Math.Component.1";
 
 long g_lObjs = 0;   //счетчик объектов
 long g_lLocks = 0;  //счетчик блокировок
+
+
 
 STDAPI DllGetClassObject(REFCLSID rclsid, REFIID riid, void**
 	ppv)
@@ -53,6 +57,8 @@ STDAPI DllCanUnloadNow(void)
 		return(S_OK);
 }
 
+
+
 //
 // Server registration
 //
@@ -74,4 +80,19 @@ STDAPI DllUnregisterServer()
 	return UnregisterServer(CLSID_MATH,
 		g_szVerIndProgID,
 		g_szProgID);
+}
+
+///////////////////////////////////////////////////////////
+//
+// DLL module information
+//
+BOOL APIENTRY DllMain(HANDLE hModule,
+	DWORD dwReason,
+	void* lpReserved)
+{
+	if (dwReason == DLL_PROCESS_ATTACH)
+	{
+		g_hModule = (HMODULE)hModule;
+	}
+	return TRUE;
 }

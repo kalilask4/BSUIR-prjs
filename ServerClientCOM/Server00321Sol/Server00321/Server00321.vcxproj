@@ -151,12 +151,12 @@
     <None Include="Server00321.def" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\REGISTRY.H" />
     <ClInclude Include="CMath.h" />
+    <ClInclude Include="REGISTRY.H" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\REGISTRY.CPP" />
     <ClCompile Include="CMath.cpp" />
+    <ClCompile Include="REGISTRY.CPP" />
     <ClCompile Include="Server00321.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

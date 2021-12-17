@@ -22,9 +22,20 @@ CMath::~CMath()
 
 STDMETHODIMP CMath::QueryInterface(REFIID riid, void** ppv)
 {
-	*ppv = 0;
+	/**ppv = 0;
 	if (riid == IID_IUnknown || riid == IID_IMATH)
-		*ppv = this;
+		*ppv = this;*/
+	*ppv = 0;
+
+	if (riid == IID_IUnknown)
+		*ppv = (IMath*)this;
+	else if (riid == IID_IMATH)
+		*ppv = (IMath*)this;
+	else if (riid == IID_IVer)
+			*ppv = (IVer*)this;
+
+	
+
 	if (*ppv)
 	{
 		AddRef();
@@ -72,6 +83,21 @@ STDMETHODIMP CMath::Divide(long lOp1, long lOp2, long* pResult
 	return S_OK;
 }
 
+STDMETHODIMP CMath::FunTest(int lOp1, int lOp2, float* pResult)
+{
+
+	*pResult = lOp1 * lOp2 * 10;
+	return S_OK;
+}
+
+
+STDMETHODIMP CMath::GetAuthor(wchar_t** author)
+{
+	wchar_t* p = (wchar_t*)CoTaskMemAlloc(200);
+	lstrcpyW(p, L"From COM object 00321 kalilask4\n");
+	*author = p;
+	return S_OK;
+}
 
 
 //Фабрика класса
