@@ -1,0 +1,26 @@
+HKCR
+{
+	Atl-autoSrv.CoMyMath.1 = s 'MyMath class'
+	{
+		CLSID = s '{4e488da0-e934-4289-9a8a-0d9182fed9c7}'
+	}
+	Atl-autoSrv.CoMyMath = s 'MyMath class'
+	{		
+		CurVer = s 'Atl-autoSrv.CoMyMath.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {4e488da0-e934-4289-9a8a-0d9182fed9c7} = s 'MyMath class'
+		{
+			ProgID = s 'Atl-autoSrv.CoMyMath.1'
+			VersionIndependentProgID = s 'Atl-autoSrv.CoMyMath'
+			ForceRemove Programmable
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			TypeLib = s '{6d2ec9b2-2f7a-4358-8fb4-d333b8edd6fa}'
+			Version = s '1.0'
+		}
+	}
+}
