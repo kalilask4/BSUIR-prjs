@@ -8,3 +8,4 @@ The main idea of this project is to implement the diffrent console, ASP, WPF fun
 4. Hybrid Cloud App
 5. ServerClientCOM. Development of a simple COM server and client (c++) (registration/unregistration regsvr32 Server00321.dll /u)
 6. COMdevServerClientCPP. Simple COM server and client
+7. ATLAutomationServerProject. Implementation of the ATL Automation Server Project
