@@ -4,7 +4,7 @@ The main idea of this project is to implement the diffrent console, ASP, WPF fun
 
 1. Automation Server using ATL
 2. Client Visual Basic for test ATL-server 
-3. Test Azure deploying. https://testazuredeploy20211105045903.azurewebsites.net
+3. Test Azure deploying. 
 4. Hybrid Cloud App
 5. ServerClientCOM. Development of a simple COM server and client (c++) (registration/unregistration regsvr32 Server00321.dll /u)
 6. COMdevServerClientCPP. Simple COM server and client
