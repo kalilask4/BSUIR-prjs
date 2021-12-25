@@ -1,0 +1,39 @@
+﻿// SR2ATLAutoSvr.idl: источник языка IDL для SR2ATLAutoSvr
+//
+
+// Этот файл будет обработан средством MIDL для
+// создание библиотеки типов ($handlersafeidlname$.tlb) и кода маршалирования.
+
+import "oaidl.idl";
+import "ocidl.idl";
+
+[
+	object,
+	uuid(ef79723f-48f7-4fb1-afc9-c0ddbbc32eac),
+	dual,
+	nonextensible,
+	pointer_default(unique)
+]
+interface ISR2MyMath : IDispatch
+{
+	[id(1), helpstring("Среднее значение")] HRESULT fun141([in] LONG x, [in] LONG y, [out, retval] DOUBLE* z);
+	[id(2), helpstring("Макимальное значение")] HRESULT fun142([in] LONG x, [in] LONG y, [in] LONG z, [out, retval] LONG* output); //LONG x, LONG y, LONG z, LONG* output
+	[id(3), helpstring("kg -> pound")] HRESULT fun143([in] DOUBLE x, [out, retval] DOUBLE* output); //DOUBLE x, DOUBLE* output
+};
+[
+	uuid(95263321-2bc9-4785-aa57-472da3ebc9d5),
+	version(1.0),
+]
+library SR2ATLAutoSvrLib
+{
+	importlib("stdole2.tlb");
+	[
+		uuid(a76ea009-d52b-4d40-9444-3301a1357ed9)
+	]
+	coclass SR2MyMath
+	{
+		[default] interface ISR2MyMath;
+	};
+};
+
+import "shobjidl.idl";

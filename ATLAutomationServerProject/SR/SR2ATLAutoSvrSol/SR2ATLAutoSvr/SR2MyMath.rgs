@@ -1,0 +1,26 @@
+HKCR
+{
+	SR2ATLAutoSvr.SR2MyMath.1 = s 'SR2MyMath class'
+	{
+		CLSID = s '{a76ea009-d52b-4d40-9444-3301a1357ed9}'
+	}
+	SR2ATLAutoSvr.SR2MyMath = s 'SR2MyMath class'
+	{		
+		CurVer = s 'SR2ATLAutoSvr.SR2MyMath.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {a76ea009-d52b-4d40-9444-3301a1357ed9} = s 'SR2MyMath class'
+		{
+			ProgID = s 'SR2ATLAutoSvr.SR2MyMath.1'
+			VersionIndependentProgID = s 'SR2ATLAutoSvr.SR2MyMath'
+			ForceRemove Programmable
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			TypeLib = s '{95263321-2bc9-4785-aa57-472da3ebc9d5}'
+			Version = s '1.0'
+		}
+	}
+}
