@@ -1,0 +1,3 @@
+reg MSCAL
+>regsvr32.ocx
+  
