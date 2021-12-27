@@ -12,3 +12,4 @@ The main idea of this project is to implement the diffrent console, ASP, WPF fun
 8. ATLAutomationServerProjectSR. One more ATL Automation Server ant clients for test
 9. CalClientSolSR. CALENDAR control properties
 10. ATLPoligon - ActiveX+ATL
+11. Graf - ActiveX+ATL
