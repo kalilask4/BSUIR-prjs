@@ -1,0 +1,69 @@
+﻿// Graf.idl: источник языка IDL для Graf
+//
+
+// Этот файл будет обработан средством MIDL для
+// создание библиотеки типов ($handlersafeidlname$.tlb) и кода маршалирования.
+
+#include "olectl.h"
+import "oaidl.idl";
+import "ocidl.idl";
+
+[
+	object,
+	uuid(cff968f4-7aa6-4d49-8b0a-2c9629509681),
+	dual,
+	nonextensible,
+	pointer_default(unique)
+]
+interface IGrafCtl : IDispatch
+{
+	[propput, bindable, requestedit, id(DISPID_BACKCOLOR)]
+	HRESULT BackColor([in]OLE_COLOR clr);
+	[propget, bindable, requestedit, id(DISPID_BACKCOLOR)]
+	HRESULT BackColor([out,retval]OLE_COLOR* pclr);
+	[propput, bindable, requestedit, id(DISPID_BORDERSTYLE)]
+	HRESULT BorderStyle([in]long style);
+	[propget, bindable, requestedit, id(DISPID_BORDERSTYLE)]
+	HRESULT BorderStyle([out, retval]long* pstyle);
+	[propput, bindable, requestedit, id(DISPID_FILLCOLOR)]
+	HRESULT FillColor([in]OLE_COLOR clr);
+	[propget, bindable, requestedit, id(DISPID_FILLCOLOR)]
+	HRESULT FillColor([out, retval]OLE_COLOR* pclr);
+	[propget, id(1), helpstring("Начало по оси X")] HRESULT StartX([out, retval] LONG* pVal);
+	[propput, id(1), helpstring("Начало по оси X")] HRESULT StartX([in] LONG newVal);
+	[propget, id(2), helpstring("Конец по оси X")] HRESULT EndX([out, retval] LONG* pVal);
+	[propput, id(2), helpstring("Конец по оси X")] HRESULT EndX([in] LONG newVal);
+	[propget, id(3), helpstring("Начало по оси Y")] HRESULT StartY([out, retval] LONG* pVal);
+	[propput, id(3), helpstring("Начало по оси Y")] HRESULT StartY([in] LONG newVal);
+	[propget, id(4), helpstring("Конец по оси Y")] HRESULT EndY([out, retval] LONG* pVal);
+	[propput, id(4), helpstring("Конец по оси Y")] HRESULT EndY([in] LONG newVal);
+};
+
+[
+	uuid(58fe36b6-a0c7-447e-b1bb-f780c5775a7f),
+	version(1.0),
+]
+library GrafLib
+{
+	importlib("stdole2.tlb");
+	[
+		uuid(08bc11d6-2f27-44c4-8baa-60e3799fb18a)
+	]
+	dispinterface _IGrafCtlEvents
+	{
+		properties:
+		methods:
+			[id(1)] HRESULT ClickL();
+			[id(2)] HRESULT ClickR();
+	};
+	[
+		uuid(620ea895-635b-4fb2-8ddd-0e0bdf234e03),
+		control
+	]
+	coclass GrafCtl
+	{
+		[default] interface IGrafCtl;
+		[default, source] dispinterface _IGrafCtlEvents;
+	};
+};
+

@@ -1,0 +1,32 @@
+HKCR
+{
+	Graf.GrafCtl.1 = s 'GrafCtl class'
+	{
+		CLSID = s '{620ea895-635b-4fb2-8ddd-0e0bdf234e03}'
+	}
+	Graf.GrafCtl = s 'GrafCtl class'
+	{		
+		CurVer = s 'Graf.GrafCtl.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {620ea895-635b-4fb2-8ddd-0e0bdf234e03} = s 'GrafCtl class'
+		{
+			ProgID = s 'Graf.GrafCtl.1'
+			VersionIndependentProgID = s 'Graf.GrafCtl'
+			ForceRemove Programmable
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			ForceRemove Control
+			ForceRemove 'ToolboxBitmap32' = s '%MODULE%, 106'
+			MiscStatus = s '0'
+			{
+			    '1' = s '%OLEMISC%'
+			}
+			TypeLib = s '{58fe36b6-a0c7-447e-b1bb-f780c5775a7f}'
+			Version = s '1.0'
+		}
+	}
+}
