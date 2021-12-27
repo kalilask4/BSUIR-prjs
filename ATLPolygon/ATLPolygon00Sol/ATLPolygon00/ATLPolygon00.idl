@@ -1,0 +1,63 @@
+﻿// ATLPolygon00.idl: источник языка IDL для ATLPolygon00
+//
+
+// Этот файл будет обработан средством MIDL для
+// создание библиотеки типов ($handlersafeidlname$.tlb) и кода маршалирования.
+
+#include "olectl.h"
+import "oaidl.idl";
+import "ocidl.idl";
+
+[
+	object,
+	uuid(92d1b9c0-2131-47d1-92c8-979c1ce5c592),
+	dual,
+	nonextensible,
+	pointer_default(unique)
+]
+interface IATLPolyCtr00 : IDispatch
+{
+	[propput, bindable, requestedit, id(DISPID_BORDERCOLOR)]
+	HRESULT BorderColor([in]OLE_COLOR clr);
+	[propget, bindable, requestedit, id(DISPID_BORDERCOLOR)]
+	HRESULT BorderColor([out, retval]OLE_COLOR* pclr);
+	[propput, bindable, requestedit, id(DISPID_BORDERWIDTH)]
+	HRESULT BorderWidth([in]long width);
+	[propget, bindable, requestedit, id(DISPID_BORDERWIDTH)]
+	HRESULT BorderWidth([out, retval]long* width);
+	[propput, bindable, requestedit, id(DISPID_FILLCOLOR)]
+	HRESULT FillColor([in]OLE_COLOR clr);
+	[propget, bindable, requestedit, id(DISPID_FILLCOLOR)]
+	HRESULT FillColor([out, retval]OLE_COLOR* pclr);
+	[propget, id(1), helpstring("Количество сторон")] HRESULT Sides([out, retval] SHORT* pVal);
+	[propput, id(1), helpstring("Количество сторон")] HRESULT Sides([in] SHORT newVal);
+};
+
+[
+	uuid(5d3b508f-3ce0-4522-a4c3-3bad4b7ce3c6),
+	version(1.0),
+]
+library ATLPolygon00Lib
+{
+	importlib("stdole2.tlb");
+	[
+		uuid(fb723a2a-8aa7-4743-978a-1db8e5257254)
+	]
+	dispinterface _IATLPolyCtr00Events
+	{
+		properties:
+		methods:
+			[id(1), helpstring("Клик внутри")] void ClickIn([in] LONG x,[in] LONG y);
+			[id(2), helpstring("Клик вне")] void ClickOut([in] LONG x, [in] LONG y);
+	};
+	[
+		uuid(227d0672-6176-4dce-b654-2f0a47870912),
+		control
+	]
+	coclass ATLPolyCtr00
+	{
+		[default] interface IATLPolyCtr00;
+		[default, source] dispinterface _IATLPolyCtr00Events;
+	};
+};
+

@@ -1,0 +1,32 @@
+HKCR
+{
+	ATLPolygon00.ATLPolyCtl00.1 = s 'ATLPolyCtr00 class'
+	{
+		CLSID = s '{227d0672-6176-4dce-b654-2f0a47870912}'
+	}
+	ATLPolygon00.ATLPolyCtl00 = s 'ATLPolyCtr00 class'
+	{		
+		CurVer = s 'ATLPolygon00.ATLPolyCtl00.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {227d0672-6176-4dce-b654-2f0a47870912} = s 'ATLPolyCtr00 class'
+		{
+			ProgID = s 'ATLPolygon00.ATLPolyCtl00.1'
+			VersionIndependentProgID = s 'ATLPolygon00.ATLPolyCtl00'
+			ForceRemove Programmable
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			ForceRemove Control
+			ForceRemove 'ToolboxBitmap32' = s '%MODULE%, 106'
+			MiscStatus = s '0'
+			{
+			    '1' = s '%OLEMISC%'
+			}
+			TypeLib = s '{5d3b508f-3ce0-4522-a4c3-3bad4b7ce3c6}'
+			Version = s '1.0'
+		}
+	}
+}
